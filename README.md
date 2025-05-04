@@ -1,36 +1,154 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# JiraGenius - AI-Enhanced Project Management Platform
 
-## Getting Started
+JiraGenius is an enhanced version of Jira with powerful AI-driven features built specifically for modern development teams. Our platform streamlines the project management process by introducing smart automation and intelligent workflow assistance.
 
-First, run the development server:
+![JiraGenius Screenshot](https://i.imgur.com/YourScreenshotHere.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Live Demo
+
+[View the live demo](https://jiragenius.vercel.app)
+
+## 🧠 Project Genesis & Innovation
+
+We all love Jira for its project management capabilities, but we identified key pain points that still exist in the workflow:
+
+- Sprint planning remains a time-consuming, manual process
+- Translating feature ideas into technical implementation plans is often challenging
+- There's a disconnect between high-level project vision and granular tasks
+
+JiraGenius addresses these challenges with two game-changing AI-powered features:
+
+### 1. AI-Powered Sprint Planning
+Our intelligent sprint generation system allows teams to:
+- Input project ideas and get a fully structured project outline with core and suggested features
+- Receive optimized tech stack recommendations tailored to your project needs
+- Generate complete, detailed sprint plans with task breakdowns, time estimates, and dependencies
+- Get both developer-friendly and AI-assistant-friendly sprint plans that work together
+
+### 2. Feature Implementation Planning
+Seamlessly translate feature ideas into implementation plans:
+- Input a feature concept and get a refined, structured feature description
+- Generate comprehensive implementation plans with component breakdowns, technical considerations, and best practices
+- Receive separate plans optimized for human developers and AI assistants enabling true human-AI collaboration
+
+## 🌟 Key Features
+
+- **Modern Jira Interface**: Familiar Jira-style UI with enhanced functionality
+- **AI Sprint Generation**: Create comprehensive sprint plans with one click
+- **Tech Stack Advisor**: Get personalized tech stack recommendations for your project
+- **Feature Implementation Planner**: Translate ideas into actionable technical plans
+- **Kanban Board**: Visualize and manage work with an intuitive drag-and-drop interface
+- **Seamless AI-Human Collaboration**: Generate plans optimized for both developers and AI assistants
+
+## 🛠️ Technical Innovation
+
+JiraGenius leverages cutting-edge technologies:
+
+- **Frontend**: Next.js 15 (App Router), React 19, TypeScript, and Tailwind CSS for a modern, responsive interface
+- **UI Components**: Radix UI primitives for accessibility and consistent design
+- **Database**: Firebase Firestore for real-time data synchronization
+- **AI Integration**: Google Generative AI (Gemini) for intelligent sprint and feature planning
+- **PDF Export**: JSPdf for exporting implementation plans
+
+## 💻 Getting Started
+
+### Prerequisites
+- Node.js (v20+)
+- npm or yarn
+- Firebase account
+- Google Generative AI API key
+
+### Installation
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/SudarshanDhage/jiragenius.git
+   cd jiragenius
+   ```
+
+2. Install dependencies
+   ```bash
+   npm install
+   ```
+
+3. Create `.env.local` file with your Firebase and Gemini AI credentials
+   ```
+   NEXT_PUBLIC_FIREBASE_API_KEY=your_firebase_api_key
+   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
+   NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_firebase_project_id
+   NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
+   NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
+   NEXT_PUBLIC_FIREBASE_APP_ID=your_firebase_app_id
+   NEXT_PUBLIC_GEMINI_API_KEY=your_gemini_api_key
+   ```
+
+4. Run the development server
+   ```bash
+   npm run dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the application
+
+## 📊 Project Structure
+
+```
+├── app/                      # Next.js App Router
+│   ├── features/             # Feature planning pages
+│   ├── projects/             # Project sprint planning pages
+│   ├── layout.tsx            # Root layout
+│   └── page.tsx              # Home page
+├── components/               # React components
+│   ├── board/                # Kanban board components
+│   ├── features/             # Feature planning components
+│   ├── layouts/              # Layout components
+│   ├── projects/             # Project management components
+│   ├── ui/                   # Reusable UI components
+│   ├── JiraBoard.tsx         # Main board component
+│   ├── JiraHeader.tsx        # Application header
+│   └── JiraSidebar.tsx       # Application sidebar
+├── contexts/                 # React contexts
+├── lib/                      # Utilities and services
+│   ├── ai/                   # AI integration with Gemini
+│   ├── firebase              # Firebase configuration and services
+│   └── utils                 # Helper utilities
+└── public/                   # Static assets
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔍 Use Cases
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### For Development Teams
+- **Project Kickoff**: Generate structured sprint plans from high-level project ideas
+- **Feature Planning**: Translate feature requirements into detailed implementation guides
+- **Sprint Planning**: Automate the creation of sprint tasks with smart estimates
+- **Knowledge Transfer**: Create comprehensive documentation for onboarding new team members
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### For Product Managers
+- **Project Scoping**: Convert product ideas into structured feature breakdowns
+- **Resource Planning**: Get intelligent estimates for development tasks
+- **Technical Translation**: Bridge the gap between business requirements and technical implementation
 
-## Learn More
+### For Hackathon Participants
+- **Quick Project Setup**: Generate complete project structures in minutes
+- **Technology Selection**: Get intelligent tech stack recommendations
+- **Implementation Guidance**: Receive detailed implementation plans for efficient coding
 
-To learn more about Next.js, take a look at the following resources:
+## 📋 Example Workflow
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Input Project Idea**: Enter a description of your project
+2. **Review & Customize Project Structure**: Adjust core and suggested features
+3. **Choose Tech Stack**: Select from AI-recommended technology options
+4. **Generate Sprint Plan**: Get a complete, detailed sprint plan with tasks and estimates
+5. **Add Feature Details**: Input specific feature requirements for detailed implementation plans
+6. **Execute**: Track progress with the Kanban board
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📝 Future Enhancements
 
-## Deploy on Vercel
+- **AI-Powered Code Generation**: Generate starter code for features
+- **Automatic Documentation**: Create technical documentation from implementation plans
+- **Meeting Summarization**: Capture and organize key decisions from planning meetings
+- **Integration with Version Control**: Link implementation plans with code commits
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+Built with ❤️ for the Level Up Vibe Coding Hackathon

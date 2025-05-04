@@ -2,11 +2,9 @@
 
 JiraGenius is an enhanced version of Jira with powerful AI-driven features built specifically for modern development teams. Our platform streamlines the project management process by introducing smart automation and intelligent workflow assistance.
 
-![JiraGenius Screenshot](https://i.imgur.com/YourScreenshotHere.png)
-
 ## 🚀 Live Demo
 
-[View the live demo](https://jiragenius.vercel.app)
+[View the live demo](https://jira-6xtd.vercel.app/)
 
 ## 🧠 Project Genesis & Innovation
 
@@ -62,8 +60,8 @@ JiraGenius leverages cutting-edge technologies:
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/SudarshanDhage/jiragenius.git
-   cd jiragenius
+   git clone https://github.com/SudarshanDhage/jira.git
+   cd jira
    ```
 
 2. Install dependencies

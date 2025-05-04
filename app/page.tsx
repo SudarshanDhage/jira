@@ -12,9 +12,10 @@ import EmptyStateView from '@/components/board/EmptyStateView'
 export default function Home() {
   const [projects, setProjects] = useState<any[]>([])
   const [isLoading, setIsLoading] = useState(true)
-  const { sidebarOpen, activeSection } = useSidebar()
+  const { sidebarOpen, activeSection, setActiveSection } = useSidebar()
 
   useEffect(() => {
+    // Focus on loading projects instead of managing activeSection state
     const fetchProjects = async () => {
       try {
         const projectsData = await getProjects()
@@ -27,9 +28,9 @@ export default function Home() {
     }
 
     fetchProjects()
-  }, [])
+  }, []) // Remove activeSection dependency to prevent re-runs
 
-  // Render appropriate content based on sidebar section
+  // Render appropriate content based on loading state only
   const renderContent = () => {
     // Loading state
     if (isLoading) {
@@ -41,7 +42,7 @@ export default function Home() {
     }
 
     // No projects state
-    if (projects.length === 0 && activeSection === 'company') {
+    if (projects.length === 0) {
       return (
         <div className="flex flex-col items-center justify-center min-h-[calc(100vh-100px)] p-6">
           <h1 className="text-2xl font-semibold text-[#172B4D] mb-4">Welcome to AI Project Planner</h1>
@@ -66,52 +67,8 @@ export default function Home() {
       )
     }
 
-    // Company/Jira board view (default)
-    if (activeSection === 'company') {
-      return <JiraBoard />
-    }
-
-    // For sections with corresponding EmptyStateView types
-    const sectionToViewType: Record<string, any> = {
-      summary: 'summary',
-      timeline: 'timeline',
-      calendar: 'calendar', 
-      list: 'list',
-      forms: 'forms',
-      goals: 'goals',
-      code: 'code',
-      archived: 'archived',
-      allprojects: 'allprojects',
-      plans: 'pages'
-    }
-
-    // Show corresponding empty state view if available
-    if (sectionToViewType[activeSection]) {
-      return <EmptyStateView viewType={sectionToViewType[activeSection]} />
-    }
-
-    // For Sprint Project or Feature Plan sections, show loading indicators
-    // instead of placeholders to indicate content is loading
-    if (activeSection === 'sprint' || activeSection === 'feature') {
-      return (
-        <div className="flex flex-col items-center justify-center min-h-[calc(100vh-100px)] p-6">
-          <Loader2 size={32} className="animate-spin text-[#0052CC] mb-4" />
-          <p className="text-center text-[#6B778C]">
-            Loading {activeSection === 'sprint' ? 'Sprint Project' : 'Feature Plan'}...
-          </p>
-        </div>
-      )
-    }
-
-    // Default placeholder for other sections
-    return (
-      <div className="flex flex-col items-center justify-center min-h-[calc(100vh-100px)] p-6">
-        <h1 className="text-2xl font-semibold text-[#172B4D] mb-4">{activeSection.charAt(0).toUpperCase() + activeSection.slice(1)}</h1>
-        <p className="text-center text-[#6B778C] mb-8 max-w-lg">
-          This section is currently under development.
-        </p>
-      </div>
-    )
+    // Always return the Jira board for projects view
+    return <JiraBoard />
   }
 
   return (

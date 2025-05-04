@@ -15,7 +15,7 @@ const initialColumns: Column[] = [
 ];
 
 const JiraBoardContent: React.FC<JiraBoardProps> = ({ 
-  _sidebarOpen = false, 
+  sidebarOpen = false, 
   data,
   onReorder 
 }) => {
@@ -292,12 +292,14 @@ const JiraBoardContent: React.FC<JiraBoardProps> = ({
         </div>
 
         {/* Task Modal */}
-        <TaskModal 
-          task={selectedTask}
-          isOpen={isModalOpen}
-          onClose={closeModal}
-          onUpdateTask={handleTaskUpdate}
-        />
+        {selectedTask && (
+          <TaskModal 
+            task={selectedTask}
+            isOpen={isModalOpen}
+            onClose={closeModal}
+            onUpdateTask={handleTaskUpdate}
+          />
+        )}
       </div>
     </>
   );

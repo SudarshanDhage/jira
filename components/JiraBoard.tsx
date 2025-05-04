@@ -258,9 +258,12 @@ const JiraBoard: React.FC = () => {
       {/* View content based on selected tab */}
       {activeView === 'board' ? (
         <JiraBoardContent 
-          _sidebarOpen={sidebarOpen} 
+          sidebarOpen={sidebarOpen} 
           data={{ columns: [] }}
-          onReorder={() => {}} 
+          onReorder={(updatedColumns) => {
+            console.log('Board reordered', updatedColumns);
+            // You can add more functionality here if needed
+          }} 
         />
       ) : (
         <EmptyStateView viewType={activeView as any} />

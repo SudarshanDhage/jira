@@ -149,4 +149,4 @@ JiraGenius leverages cutting-edge technologies:
 
 ---
 
-Built with ❤️ for the Level Up Vibe Coding Hackathon
+Built with ❤️ for the Coding Hackathon
